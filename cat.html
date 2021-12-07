@@ -1,18 +1,18 @@
 <body>
 <div id="app">
-  <img :src="url"></img>
+  <img :src="url" width="100%"></img>
 </div>
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <script src="https://cdn.bootcss.com/vue/2.5.2/vue.min.js"></script>
 </body>
 <script>
-var vm = new Vue({
+  var vm = new Vue({
     el:"#app",
     data:{
       url:null
     },
-mounted: function(){
- axios.get("https://api.thecatapi.com/v1/images/search").then(res=>{this.url=res.data[0].url})
-}
+    mounted: function(){
+     axios.get("https://api.thecatapi.com/v1/images/search").then(res=>{this.url=res.data[0].url})
+    }
   });
 </script>
